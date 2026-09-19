@@ -2,39 +2,52 @@
 import math
 print("Hello")
 print("I'll help you regarding the squares and square root of a number.\n")
-q= input("Wanna use?? Please enter a 'Yes' or 'No': ")
+print("Wanna use?? ")
+q= input("Please enter a 'Yes' or 'No': ")
 # To use the function
-if q in ['Yes', 'yes', 'y', 'Y']:
-    print("\nEnter: ")
-    print("[1] To find the square of any number")
-    print("[2] To check the square root of any whole number.")
-    que= input("Please choose from above: ")
-    ### To find the square of a number.
-    if que=='1' or que==1:
-        x= int(input("Enter any number: "))
-        s= x**x
-        print("The square of the given number is: ", s)
-    ### To check the square root of the given number.
-    elif que=='2' or que==2:
-        x= int(input("Enter the number you want to check: "))
-        if x>0:
-            i=math.sqrt(x)
-            print("The square root of the given number is: ", i)
-            j=str(i)
-            if j.endswith('.0'):
-                print("Yes!! The number is a perfect square.")
+while True:
+    if q in ['Yes', 'yes', 'y', 'Y']:
+        print("\nEnter: ")
+        print("[1] To find the square of any number")
+        print("[2] To check the square root of any whole number.")
+        print("[3] To exit.")
+        que= input("Please choose from above: ")
+        ### To find the square of a number.
+        if que=='1' or que==1:
+            x= int(input("Enter any number: "))
+            s= x**2
+            print("The square of the given number is: ", s)
+        ### To check the square root of the given number.
+        elif que=='2' or que==2:
+            x= int(input("Enter the number you want to check: "))
+            if x>0:
+                i=math.sqrt(x)
+                print("The square root of the given number is: ", i)
+                j=str(i)
+                if j.endswith('.0'):
+                    print("Yes!! The number is a perfect square.")
+                else:
+                    print("No, not a perfect square.")
+            elif x==0:
+                    print("The square root of the 0 is: 0 ")
             else:
-                print("No, not a perfect square.")
-        elif x==0:
-                print("The square root of the 0 is: 0 ")
+                    print("You need to enter the positive numbers.")
+        ### To exit.
+        elif que=='3' or que==3:
+            print("Ok As you ask.")
+            print("Exited successfully.")
+            break
+        ### If invalid response.
         else:
-                print("You need to enter the positive numbers.")
+            print("Enter a valid response.")
+            print("Please enter '1', '2' or '3' only.")
+    # To exit the function.
+    elif q in ['No', 'no', 'N', 'n']:
+        print("Okay!!")
+        print("Exiting the code.")
+        print("Done! Successfully.")
+        break
+    # For inappropriate response.
     else:
-        print("Enter a valid response.")
-        print("Please enter '1' or '2' only.")
-# To exit the function.
-elif q in ['No', 'no', 'N', 'n']:
-    break
-# For invalid input.
-else:
-    print("Please enter a valid response.")
+        print("Please enter a valid response.")
+        break
